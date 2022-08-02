@@ -452,7 +452,7 @@ Redlock.prototype._random = function _random(){
 Redlock.prototype._executeScript = function(server, name, args, callback) {
 	const script = this.scripts[name];
 
-	return server.evalsha(script.hash, args, (err, result) => {
+	return server.evalSha(script.hash, args, (err, result) => {
 		if(err !== null && err.message.startsWith("NOSCRIPT")) {
 			// Script is not loaded yet, call eval and it will populate it in redis lua scripts cache
 			args.unshift(script.value);
