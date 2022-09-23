@@ -6,7 +6,7 @@ var Redlock = require('./redlock');
 (async function(){
 
 await test('single-server: https://www.npmjs.com/package/redis', require('redis').createClient());
-//await test('single-server: https://www.npmjs.com/package/redis (string_numbers=true)', require('redis').createClient({string_numbers: true}));
+await test('single-server: https://www.npmjs.com/package/redis (string_numbers=true)', require('redis').createClient({string_numbers: true}));
 
 /* istanbul ignore next */
 async function test(name, client){
